@@ -1,0 +1,41 @@
+# Specify dockerfiles
+# If not defined, it will use docker-compose.yml
+# dockerfiles:
+#   - docker-compose.yml
+
+# Specify services as listed in your docker-compose files
+services:
+#  - localstack
+  - elastic-search
+#  - aws-cli
+  - es-dataload
+  - pg-issuance
+  - pg-logging
+#  - zookeeper
+#  - kafka
+
+# Specify projects
+# This takes prioty over services if both are inputted
+# Define it below
+#projects:
+#  - ANI_KAFKA
+
+# Defined the services per project
+define:
+  ANI_KAFKA:
+    - localstack
+    - elastic-search
+    - aws-cli
+    - es-dataload
+    - pg-issuance
+    - pg-logging
+    - zookeeper
+    - kafka
+    - kibana
+  ANI:
+    - localstack
+    - elastic-search
+    - aws-cli
+    - es-dataload
+    - pg-issuance
+    - pg-logging
